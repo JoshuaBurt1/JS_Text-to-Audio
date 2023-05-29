@@ -237,7 +237,7 @@ function setting_on_click() {
   story.textContent = "";
 }
 
-// concatenate the user story and display
+// concatenate the user story, display text, read audio
 function playback_on_click() {
   story.textContent =
     choosenNoun1.textContent +
@@ -250,27 +250,35 @@ function playback_on_click() {
     " " +
     choosenSetting.textContent;
 
-  audioNoun1.play(); //plays audioNoun
-  var duration1 = audioNoun1.duration * 1000; //gets duration of audioNoun
-
-  setTimeout(() => {
-    audioVerb.play(); //plays audioVerb, after audioNoun1 duration
-    var duration2 = audioVerb.duration * 1000; //gets duration of audioVerb
+  if ("speechSynthesis" in window) {
+    // Method 1: if speech synthesis is supported: Web Speech API
+    var speech = new SpeechSynthesisUtterance();
+    speech.text = story.textContent;
+    window.speechSynthesis.speak(speech);
+  } else {
+    // Method 2: recorded speech within audio folder
+    audioNoun1.play(); //plays audioNoun
+    var duration1 = audioNoun1.duration * 1000; //gets duration of audioNoun
 
     setTimeout(() => {
-      audioAdjective.play(); //plays audioAdjective, after audioVerb duration
-      var duration3 = audioAdjective.duration * 1000; //gets duration of audioAdjective
+      audioVerb.play(); //plays audioVerb, after audioNoun1 duration
+      var duration2 = audioVerb.duration * 1000; //gets duration of audioVerb
 
       setTimeout(() => {
-        audioNoun2.play(); //plays audioNoun2, after audioAdjective duration
-        var duration4 = audioNoun2.duration * 1000; //gets duration of audioNoun2
+        audioAdjective.play(); //plays audioAdjective, after audioVerb duration
+        var duration3 = audioAdjective.duration * 1000; //gets duration of audioAdjective
 
         setTimeout(() => {
-          audioSetting.play(); //plays audioSetting, after audioNoun2 duration
-        }, duration4);
-      }, duration3);
-    }, duration2);
-  }, duration1);
+          audioNoun2.play(); //plays audioNoun2, after audioAdjective duration
+          var duration4 = audioNoun2.duration * 1000; //gets duration of audioNoun2
+
+          setTimeout(() => {
+            audioSetting.play(); //plays audioSetting, after audioNoun2 duration
+          }, duration4);
+        }, duration3);
+      }, duration2);
+    }, duration1);
+  }
 }
 
 //random function for random_on_click button, input array, returns element content
