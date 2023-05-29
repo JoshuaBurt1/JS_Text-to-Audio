@@ -1,0 +1,270 @@
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+html {
+  font: 10px Helvetica, sans-serif;
+  background-image: url(images/background.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+body {
+  font-size: clamp(1rem, 0.75rem + 1.5vw, 1.5rem);
+}
+h1 {
+  text-align: center;
+  font-size: 4.5rem;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.title {
+  height: 150%;
+  width: 100vw;
+}
+/* Left side: containers 
+.left {
+  position: relative;
+  opacity: 0.9;
+  border-radius: 20px;
+  top: -850px;
+  left: 170px;
+  rotate: 2.1deg;
+  scale: 1.28;
+  height: 200px;
+  display: grid;
+  width: 500px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 100px 100px;
+  gap: 0px;
+}
+.grid1 {
+  margin-left: 30px;
+  background-color: aliceblue;
+  -webkit-filter: brightness(100%);
+  opacity: 0.8;
+  height: 100px;
+  width: 85px;
+}
+.grid1:hover {
+  -webkit-filter: brightness(150%);
+} */
+
+/*Right side: containers*/
+/*div containing: noun1, verb, adjective, noun2, setting buttons*/
+.buttonBox {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 57.2%;
+  margin-top: 11%;
+  margin-bottom: 0.6%;
+  width: 37.1%;
+}
+/*div containing: h2 headings, choosenNoun1, choosenVerb, choosenAdjective, choosenNoun2, choosenSetting, & story*/
+.storyBox {
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-around;
+  border: solid 3px;
+  border-radius: 20px;
+  width: 19%;
+  height: 28vh;
+  margin-left: 57.2%;
+  font-size: clamp(1rem, 0.75rem + 1.5vw, 1.5rem);
+  display: block; /*children headings appear vertically*/
+}
+.prelim1 {
+  display: flex; /*Words appear horizontally*/
+}
+h2 {
+  line-height: 90%;
+  margin-left: 3%;
+}
+p {
+  margin-top: 0px;
+  margin-left: 3%;
+}
+
+/*Right side: buttons*/
+#random {
+  background-image: url(images/random.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 50%;
+  width: 88px;
+  height: 100px;
+  display: flex; /*needed to center button "Random Story" within circle*/
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+  margin-left: 79.8vw;
+  margin-top: 33vh;
+}
+#random:hover {
+  -webkit-filter: brightness(150%);
+}
+#random:active {
+  -webkit-filter: brightness(120%);
+}
+
+#playback {
+  background-image: url(images/playback.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 50%;
+  width: 88px;
+  height: 100px;
+  display: flex; /*needed to center button "Show Story" within circle*/
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+  margin-left: 90%;
+  margin-top: -3.8%;
+}
+#playback:hover {
+  -webkit-filter: brightness(150%);
+}
+#playback:active {
+  -webkit-filter: brightness(120%);
+}
+
+#noun1 {
+  background-image: url(images/button1.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  display: flex; /*needed to center button "Noun 1" within circle*/
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+}
+#noun1:hover {
+  -webkit-filter: brightness(150%);
+}
+#noun1:active {
+  -webkit-filter: brightness(120%);
+}
+#choosenNoun1 {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: purple;
+}
+#verb {
+  background-image: url(images/button2.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  border-radius: 50%;
+  width: 83px;
+  height: 83px;
+  display: flex; /*needed to center button "Verb" within circle*/
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+}
+#verb:hover {
+  -webkit-filter: brightness(150%);
+}
+#verb:active {
+  -webkit-filter: brightness(120%);
+}
+#choosenVerb {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: cyan;
+}
+#adjective {
+  background-image: url(images/button3.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  border-radius: 50%;
+  width: 83px;
+  height: 83px;
+  display: flex; /*needed to center button "Adjective" within circle*/
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+  margin-right: 3px;
+}
+#adjective:hover {
+  -webkit-filter: brightness(150%);
+}
+#adjective:active {
+  -webkit-filter: brightness(120%);
+}
+#choosenAdjective {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: lightgreen;
+}
+#noun2 {
+  background-image: url(images/button4.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  border-radius: 50%;
+  width: 83px;
+  height: 83px;
+  display: flex; /*needed to center button "Noun 2" within circle*/
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+  margin-right: 5px;
+}
+#noun2:hover {
+  -webkit-filter: brightness(150%);
+}
+#noun2:active {
+  -webkit-filter: brightness(120%);
+}
+#choosenNoun2 {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: orange;
+}
+#setting {
+  background-image: url(images/button5.png);
+  background-repeat: no-repeat;
+  background-size: 110%;
+  border-radius: 50%;
+  width: 83px;
+  height: 83px;
+  display: flex; /*needed to center button "Setting" within circle*/
+  align-items: center;
+  justify-content: center;
+  border: none;
+  font-size: 1.7rem;
+  background-color: transparent;
+  margin-top: 3px;
+  margin-right: 20x;
+}
+#setting:hover {
+  -webkit-filter: brightness(150%);
+}
+#setting:active {
+  -webkit-filter: brightness(120%);
+}
+#choosenSetting {
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-decoration-color: magenta;
+}
+
+@media (max-width: 1400px) {
+  html {
+    overflow-x: visible;
+  }
+}
